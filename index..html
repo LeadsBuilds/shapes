@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Balls</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        canvas {
+            border: 1px solid red;
+            background: none;
+        }
+		.ball {
+		  width: 50px; /* Initial size of the ball */
+		  height: 50px;
+		  /* background-color: #3498db; */
+		  border-radius: 50%;
+		  position: absolute;
+		  top: 50%; /* Center vertically */
+		  left: 50%; /* Center horizontally */
+		  transform: translate(-50%, -50%);
+		  animation: scaleUp 2s infinite alternate; /* Animation to scale up and down */
+		}
+
+		@keyframes scaleUp {
+		  0% {
+			transform: translate(-50%, -50%) scale(1);
+		  }
+		  100% {
+			transform: translate(-50%, -50%) scale(50); /* Scales to 1.5 times its size */
+		  }
+		}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
