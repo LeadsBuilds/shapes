@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Game</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+        canvas {
+            background-color: #000;
+        }
+
+        #message-background {
+		  width: 50px; /* Initial size of the ball */
+		  height: 50px;
+		  /* background-color: #3498db; */
+		  border-radius: 50%;
+          font-size: 20px;
+          padding: 50%;
+          text-align: center;
+          color: white;
+		  position: absolute;
+		  top: 50%; /* Center vertically */
+		  left: 50%; /* Center horizontally */
+		  transform: translate(-50%, -50%);
+          background-color: cornflowerblue;
+		  animation: scaleUp 5s infinite alternate; /* Animation to scale up and down */
+          display:none;
+		}
+
+
+        #message {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-family: Arial;
+            font-size: 5em;
+            color: white;
+        }
+
+        @keyframes scaleUp {
+		  0% {
+			transform: translate(-50%, -50%) scale(1);
+		  }
+		  100% {
+			transform: translate(-50%, -50%) scale(20); /* Scales to 1.5 times its size */
+		  }
+		}
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="message-background"></div>
+    <div id="message"></div>
+    <script src="game.js"></script>
+</body>
+</html>
